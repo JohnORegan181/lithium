@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+# Mount virtual filesystems
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+# Spawn getty on tty1–tty6
+for tty in 1 2 3 4 5 6; do
+    setsid /bin/busybox getty -n tty$tty 115200 &
+done
+
+
+while true; do
+    wait
+done
