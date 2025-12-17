@@ -1,0 +1,5 @@
+# /etc/profile
+export PATH=/out:/bin:/sbin:/usr/bin:/usr/sbin
+export PS1='[\u $(pwd)]# '
+
+echo "profile loaded, PATH=$PATH"
