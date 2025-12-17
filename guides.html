@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lithium OS: guides</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #ffffff;
+      color: #000000;
+      text-align: center;
+      padding: 2rem;
+    }
+    a.download-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      margin: 2rem 0;
+      background-color: #ff7f50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    a.download-button:hover {
+      background-color: #ff6347;
+    }
+    header, footer {
+      margin: 2rem 0;
+    }
+    code {
+      background-color: #222;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="background-color: rgb(98, 150, 20); color: white; border-radius: 25px;">
+    <h1>Lithium OS</h1>
+    <p>A small linux distro that is 16MB large</p>
+    </div>
+    <div style="background-color: rgb(98, 150, 20); color: white; border-radius: 25px;">
+      <p style="color: aquamarine;">guides</p>
+      <a href="./index.html">download</a>
+    </div>
+  </header>
+
+<section>
+      <h2>how to connect to the internet (eithernet)</h2>
+      <ol>
+        <li>set eth0 (eithernet) up: ifconfig eth0 up</li>
+        <li>now find a ip address you can use with udhcpc (make sure to remember/write down the two ip's you see at the bottom): udhcpc -i eth0</li>
+        <li>now lets set the ip address: ifconfig eth0 [the leftmost ip you got from uchcpc] netmask 255.255.255.0</li>
+        <li>now set the default gateway : route add default gw [rightmost ip you got from udhcpc]</li>
+        <li>now you're connected to the internet test it by running: lpm lithfetch</li>
+        <li>to run lithfetch just run: lithfetch</li>
+      </ol>
+</section>
+
+
+<section>
+      <h2>how to update the list file so you can download more packages</h2>
+      <ol>
+        <li>change your working directory to root: cd /</li>
+        <li>run: wget https://raw.githubusercontent.com/JohnORegan181/lithium/refs/heads/main/boot-files/initramfs/list</li>
+        <li>Enjoy your updated package list!</li>
+      </ol>
+</section>
+
+</body>
+</html>
