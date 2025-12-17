@@ -1,0 +1,3 @@
+boot-files/iso/init.cpio
+boot-files/**/*.iso
+*.cpio
