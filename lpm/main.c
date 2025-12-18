@@ -6,8 +6,8 @@
 #include <sys/wait.h>
 #include <errno.h>
 
-#define LISTFILE "/list"
-#define OUTDIR   "/out"
+#define LISTFILE "./list"
+#define OUTDIR   "./out"
 #define MAXLINE  2048
 
 void trim(char *s) {

@@ -14,7 +14,7 @@ mount -t tmpfs tmpfs /out
 
 # Spawn getty on tty1–tty6
 for tty in 1 2 3 4 5 6; do
-    /bin/login
+    /bin/busybox getty -L tty$tty 115200 linux &
 done
 
 
